@@ -4,8 +4,13 @@
              xmlns:local="clr-namespace:LifeApp"
              x:Class="LifeApp.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
+    <StackLayout>
+        <Label Text="Welcome to the MainPage branch!" 
            VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+           HorizontalOptions="Center"/>
+        <Button x:Name="addTaskButton" Text="Add Task"/>
+        <Button x:Name="editAvatarButton" Text="Edit Avatar"/>
+        <Button x:Name="shopButton" Text="Shop"/>
+    </StackLayout>
 
 </ContentPage>
