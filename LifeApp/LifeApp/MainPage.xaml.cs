@@ -7,9 +7,16 @@ using Xamarin.Forms;
 
 namespace LifeApp
 {
-	public partial class MainPage : ContentPage
-	{
-		public MainPage()
+    public partial class MainPage : ContentPage
+    {
+        private void taskAdded(object sender, EventArgs e)
+        {
+            var text = ((Entry)sender).Text;
+            Label lab = this.FindByName<Label>("taskLabelAdded");
+            lab.Text = text;
+        }
+
+        public MainPage()
 		{
 			InitializeComponent();
 		}
