@@ -13,7 +13,7 @@ namespace LifeApp
 		{
 			InitializeComponent();
 
-			MainPage = new LifeApp.MainPage();
+			MainPage = new NavigationPage(new LifeApp.MainPage());
 		}
 
 		protected override void OnStart ()

@@ -19,13 +19,15 @@
             </Grid.ColumnDefinitions>
             <Entry x:Name="addTaskEntry" 
                    Placeholder="Add task..." 
-                   Completed="taskAdded" 
+                   Completed="taskAdded"
                    Grid.Row="0" Grid.Column="0" 
                    Grid.ColumnSpan="2"/>
             <Label x:Name="taskLabelAdded" 
                    Grid.Row="1" 
                    Grid.Column="0"/>
         </Grid>
+        <Button x:Name="viewTasks"
+                Text="View All Tasks"/>
         <Button x:Name="editAvatarButton" 
                 Text="Edit Avatar"/>
         <Button x:Name="shopButton" 
