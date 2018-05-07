@@ -16,30 +16,8 @@ namespace LifeApp
         public Shop()
         {
             InitializeComponent();
-            MyInventory();
 
         }
-
-        public void MyInventory()
-        {
-            StackLayout myStacklayout = new StackLayout();
-
-            Grid mygrid = new Grid();
-
-
-            for (int i = 0; i < 5; ++i)
-            {
-                mygrid.RowDefinitions.Add(new RowDefinition());
-            }
-
-            for (int i = 0; i < 5; ++i)
-            {
-                mygrid.ColumnDefinitions.Add(new ColumnDefinition());
-            }
-
-        }
-
-
 
         async void ButtonClicked(object sender, EventArgs e)
         {
@@ -51,6 +29,7 @@ namespace LifeApp
                 
                 String buy = await DisplayActionSheet("Selected Item 1", "Cancel", null, "Buy");
 
+                //creates pop up to prompt if customer wants to buy item and save it in inventory.
                 if (buy == "Buy")
                 {
                     await DisplayAlert("Item 1", "Saved in inventory", "Cancel");
@@ -84,33 +63,9 @@ namespace LifeApp
                 }
             }
 
-
         }
 
-
     }
-
-    /*         
-     public class CustomBehavior : Behavior<View>
-     {
-         protected override void OnAttachedTo(View bindable)
-         {
-             base.OnAttachedTo(bindable);
-             // Perform setup
-         }
-
-         protected override void OnDetachingFrom(View bindable)
-         {
-             base.OnDetachingFrom(bindable);
-             // Perform clean up
-         }
-
-         // Behavior implementation
-         void Inventory()
-         {
-         } 
-     }
-     */
 
     public class Inventory : Shop
     {

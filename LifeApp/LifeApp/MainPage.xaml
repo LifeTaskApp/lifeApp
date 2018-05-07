@@ -12,7 +12,6 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
             Clicked="Handle_Clicked"/>
-            
         </ContentPage.Content>
     </ContentPage>
 
