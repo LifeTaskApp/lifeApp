@@ -4,13 +4,33 @@
              xmlns:local="clr-namespace:LifeApp"
              x:Class="LifeApp.MainPage">
 
-    <StackLayout>
-        <Label Text="Welcome to the MainPage branch!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center"/>
-        <Button x:Name="addTaskButton" Text="Add Task"/>
-        <Button x:Name="editAvatarButton" Text="Edit Avatar"/>
-        <Button x:Name="shopButton" Text="Shop"/>
+    <StackLayout Margin="20, 10">
+        <Label Text="Welcome to the AddPage branch!" 
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="addTaskEntry" 
+                   Placeholder="Add task..." 
+                   Completed="taskAdded"
+                   Grid.Row="0" Grid.Column="0" 
+                   Grid.ColumnSpan="2"/>
+            <Label x:Name="taskLabelAdded" 
+                   Grid.Row="1" 
+                   Grid.Column="0"/>
+        </Grid>
+        <Button x:Name="viewTasks"
+                Text="View All Tasks"/>
+        <Button x:Name="editAvatarButton" 
+                Text="Edit Avatar"/>
+        <Button x:Name="shopButton" 
+                Text="Shop"/>
     </StackLayout>
-
 </ContentPage>
