@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace LifeApp
+namespace LifeApp.Pages
 {
     public partial class AddTask : ContentPage
     {
@@ -11,8 +11,8 @@ namespace LifeApp
         {
             InitializeComponent();
 
-            Entry editTaskEntry = this.FindByName<Entry>("editTaskEntry");
-            editTaskEntry.Text = text;
+            Entry addTaskEntry = this.FindByName<Entry>("editTaskEntry");
+            addTaskEntry.Text = text;
         }
     }
 }

@@ -8,9 +8,24 @@
         <Label Text="Welcome to the AddPage branch!" 
                VerticalOptions="Center" 
                HorizontalOptions="Center"/>
-        <Entry x:Name="addTaskEntry" 
-               Placeholder="Add task..." 
-               Completed="taskAdded"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="addTaskEntry" 
+                   Placeholder="Add task..." 
+                   Completed="taskAdded"
+                   Grid.Row="0" Grid.Column="0"
+                   Grid.ColumnSpan="2"/>
+            <Label x:Name="taskLabelAdded"
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+        </Grid>
         <Button x:Name="viewTasks"
                 Text="View All Tasks"/>
         <Button x:Name="editAvatarButton" 
