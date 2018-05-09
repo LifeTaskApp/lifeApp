@@ -11,9 +11,13 @@ namespace LifeApp
     {
         private void taskAdded(object sender, EventArgs e)
         {
-            var text = ((Entry)sender).Text;
+            Entry entry = sender as Entry;
+            var text = entry.Text;
+
             Label lab = this.FindByName<Label>("taskLabelAdded");
             lab.Text = text;
+
+            Navigation.PushAsync(new Pages.AddTask(text));
         }
 
         public MainPage()
