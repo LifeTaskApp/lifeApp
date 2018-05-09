@@ -14,6 +14,8 @@ namespace LifeApp
             var text = ((Entry)sender).Text;
             Label lab = this.FindByName<Label>("taskLabelAdded");
             lab.Text = text;
+
+            //Navigation.PushAsync(new AddTask());
         }
 
         public MainPage()
