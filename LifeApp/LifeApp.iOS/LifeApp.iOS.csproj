@@ -121,6 +121,42 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shoes-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shoes-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shoes-480.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\trousers-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\trousers-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\trousers-480.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\t-shirt-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\t-shirt-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\t-shirt-480.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backpack-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backpack-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backpack-480.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\LifeApp\LifeApp.projitems" Label="Shared" />
 </Project>
