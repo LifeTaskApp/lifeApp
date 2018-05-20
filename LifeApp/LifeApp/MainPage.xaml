@@ -3,14 +3,15 @@
              xmlns:local="clr-namespace:LifeApp"
              x:Class="LifeApp.MainPage">
     <StackLayout>
-        <Button Text="Click Me!"
+        <Button Text="Task complete!"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                Clicked="OnButtonClicked" />
+                Clicked="OnButtonClicked"
+                Command="{Binding Click}"/>
 
 
         <ProgressBar x:Name="MainLevel" 
-                Progress="0.5" 
+                Progress="0.0" 
                 Scale="1.0"/>
         <Grid x:Name="progressBarsLayout">
             <Grid.RowDefinitions>
@@ -33,7 +34,7 @@
             FontSize = "20"
             Grid.Row="0"
             Grid.Column="1"
-            Text = "0"/>
+            Text = "1"/>
             <Label
             FontSize = "12"
             HorizontalOptions="Center"

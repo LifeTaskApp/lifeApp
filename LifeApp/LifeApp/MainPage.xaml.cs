@@ -9,44 +9,35 @@ namespace LifeApp
 {
     public partial class MainPage : ContentPage
     {
-        public class UserInfo
-        { 
-            public string userName { get; set; }
-            public int level { get; set; }
-        }
-
-        private void setTestUser()
-        {
-            var testUser = new UserInfo();
-            testUser.userName = "Calvin";
-            testUser.level = 3;
-        }
-        
-        async void OnButtonClicked(object sender, EventArgs args)
-        {
-            setTestUser();
-
-
-            Label Level = this.FindByName<Label>("Level");
-            int convertLevelInt = Convert.ToInt32(Level.Text);
-            //convertLevelInt = testUser.level;
-            String convertLevelString = Convert.ToString(convertLevelInt);
-            Level.Text = convertLevelString;
-            Label User = this.FindByName<Label>("User");
-            ProgressBar MainLevel = this.FindByName<ProgressBar>("MainLevel");
-            await MainLevel.ProgressTo(1, 250, Easing.Linear);
-            User.Text = "Level up";
-            //testUser.level++;
-            await MainLevel.ProgressTo(0, 250, Easing.Linear);
-            User.Text = "Name";
-        }
-
         public MainPage()
         {
             InitializeComponent();
-            setTestUser();
+
         }
+
+        async void OnButtonClicked(object sender, EventArgs args)
+        {
+            Label User = this.FindByName<Label>("User");
+            User.Text = "Calvin";
+            Label Level = this.FindByName<Label>("Level");
+            
+            
+            ProgressBar MainLevel = this.FindByName<ProgressBar>("MainLevel");
+            await MainLevel.ProgressTo(MainLevel.Progress+.2, 250, Easing.Linear);
+            if (MainLevel.Progress == 1)
+            {
+                User.Text = "Level up";
+                int convertLevelInt = Convert.ToInt32(Level.Text);
+                convertLevelInt++;
+                String convertLevelString = Convert.ToString(convertLevelInt);
+                Level.Text = convertLevelString;
+                await MainLevel.ProgressTo(0, 250, Easing.Linear);
+            }
+            User.Text = "Name";
+
+        }
+
     }
+
+
 }
-
-
