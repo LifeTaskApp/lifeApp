@@ -18,29 +18,28 @@ namespace LifeApp
 
         async void OnButtonClicked(object sender, EventArgs args)
         {
-            Label User = this.FindByName<Label>("User");
-            User.Text = "Calvin";
-            Label Level = this.FindByName<Label>("Level");
+            Label username = this.FindByName<Label>("username");
+            Label levelLabel = this.FindByName<Label>("userLevel");
 
-            ProgressBar MainLevel = this.FindByName<ProgressBar>("MainLevel");
-            await MainLevel.ProgressTo(MainLevel.Progress + .2, 250, Easing.Linear);
+            ProgressBar userLevelBar = this.FindByName<ProgressBar>("userLevelBar");
+            await userLevelBar.ProgressTo(userLevelBar.Progress + .2, 250, Easing.Linear);
 
-            if (MainLevel.Progress == 1)
+            if (userLevelBar.Progress == 1)
             {
-                User.Text = "Level up";
-                int convertLevelInt = Convert.ToInt32(Level.Text);
+                username.Text = "Level up";
+                int convertLevelInt = Convert.ToInt32(levelLabel.Text);
                 convertLevelInt++;
                 String convertLevelString = Convert.ToString(convertLevelInt);
-                Level.Text = convertLevelString;
-                await MainLevel.ProgressTo(0, 250, Easing.Linear);
+                levelLabel.Text = convertLevelString;
+                await userLevelBar.ProgressTo(0, 250, Easing.Linear);
             }
-
-            User.Text = "Name";
         }
 
         public MainPage()
         {
             InitializeComponent();
+            Label username = this.FindByName<Label>("username");
+            username.Text = "Calvin";
         }
 
     }

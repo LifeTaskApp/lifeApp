@@ -20,7 +20,7 @@
                     VerticalOptions="Center"
                     Clicked="OnButtonClicked"
                     Command="{Binding Click}"/>
-            <ProgressBar x:Name="MainLevel" 
+            <ProgressBar x:Name="userLevelBar" 
                          Progress="0.0" 
                          Scale="1.0"/>
             <Grid x:Name="progressBarsLayout">
@@ -33,12 +33,12 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label x:Name="User"
+                <Label x:Name="username"
                        FontSize="20"
                        Grid.Row="0"
                        Grid.Column="0"
                        Text="Name"/>
-                <Label x:Name="Level"
+                <Label x:Name="userLevel"
                        FontSize="20"
                        Grid.Row="0"
                        Grid.Column="1"
@@ -68,7 +68,7 @@
                        Text="Social"
                        Grid.Row="3"
                        Grid.Column="0"/>
-                <ProgressBar x:Name="Social" 
+                <ProgressBar x:Name="social" 
                              Progress="0.3" 
                              Scale="1.0"
                              Grid.Row="4"
@@ -78,7 +78,7 @@
                        Text="Financial"
                        Grid.Row="3"
                        Grid.Column="1"/>
-                <ProgressBar x:Name="Financial" 
+                <ProgressBar x:Name="financial" 
                              Progress="0.9" 
                              Scale="1.0"
                              Grid.Row="4"
