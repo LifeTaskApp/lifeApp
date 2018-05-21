@@ -21,10 +21,10 @@ namespace LifeApp
             Label User = this.FindByName<Label>("User");
             User.Text = "Calvin";
             Label Level = this.FindByName<Label>("Level");
-            
-            
+
             ProgressBar MainLevel = this.FindByName<ProgressBar>("MainLevel");
-            await MainLevel.ProgressTo(MainLevel.Progress+.2, 250, Easing.Linear);
+            await MainLevel.ProgressTo(MainLevel.Progress + .2, 250, Easing.Linear);
+
             if (MainLevel.Progress == 1)
             {
                 User.Text = "Level up";
@@ -34,13 +34,14 @@ namespace LifeApp
                 Level.Text = convertLevelString;
                 await MainLevel.ProgressTo(0, 250, Easing.Linear);
             }
-            User.Text = "Name";
 
+            User.Text = "Name";
         }
-        
+
         public MainPage()
-		{
-			InitializeComponent();
-		}
+        {
+            InitializeComponent();
+        }
 
     }
+}
