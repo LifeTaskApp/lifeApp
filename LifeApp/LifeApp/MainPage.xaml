@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -16,7 +17,85 @@
                     Text="View All Tasks"/>
         </StackLayout>
         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-            
+            <Button Text="Task complete!"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="OnButtonClicked"
+                Command="{Binding Click}"/>
+
+
+        <ProgressBar x:Name="MainLevel" 
+                Progress="0.0" 
+                Scale="1.0"/>
+        <Grid x:Name="progressBarsLayout">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label
+            x:Name ="User"
+            FontSize = "20"
+            Grid.Row="0"
+            Grid.Column="0"
+            Text = "Name"/>
+            <Label
+            x:Name ="Level"
+            FontSize = "20"
+            Grid.Row="0"
+            Grid.Column="1"
+            Text = "1"/>
+            <Label
+            FontSize = "12"
+            HorizontalOptions="Center"
+            Text = "Fitness"
+            Grid.Row="1"
+            Grid.Column="0"/>
+            <ProgressBar x:Name="fitness" 
+                Progress="0.1" 
+                Scale="1.0"
+                Grid.Row="2"
+                Grid.Column="0"/>
+            <Label
+            FontSize = "12"
+            HorizontalOptions="Center"
+            Text = "Intellect"
+            Grid.Row="1"
+            Grid.Column="1"/>
+            <ProgressBar x:Name="intellect" 
+                Progress="0.7" 
+                Scale="1.0"
+                Grid.Row="2"
+                Grid.Column="1"/>
+            <Label
+            FontSize = "12"
+            HorizontalOptions="Center"
+            Text = "Social"
+            Grid.Row="3"
+            Grid.Column="0"/>
+            <ProgressBar x:Name="Social" 
+                Progress="0.3" 
+                Scale="1.0"
+                Grid.Row="4"
+                Grid.Column="0"/>
+            <Label
+            FontSize = "12"
+            HorizontalOptions="Center"
+            Text = "Financial"
+            Grid.Row="3"
+            Grid.Column="1"/>
+            <ProgressBar x:Name="Financial" 
+                Progress="0.9" 
+                Scale="1.0"
+                Grid.Row="4"
+                Grid.Column="1"/>
+        </Grid>
+
+    </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal" VerticalOptions="End">
             <Button x:Name="editAvatarButton" 
