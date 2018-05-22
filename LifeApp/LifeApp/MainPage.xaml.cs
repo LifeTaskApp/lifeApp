@@ -20,8 +20,7 @@ namespace LifeApp
             Label User = this.FindByName<Label>("User");
             User.Text = "Calvin";
             Label Level = this.FindByName<Label>("Level");
-            String tasktype1 = "Fitness";
-            String tasktype2 = "Social";
+            String tasktype = "Fitness";
             
             ProgressBar MainLevel = this.FindByName<ProgressBar>("MainLevel");
             ProgressBar FitnessBar = this.FindByName<ProgressBar>("FitnessBar");
@@ -29,37 +28,93 @@ namespace LifeApp
             ProgressBar FinancialBar = this.FindByName<ProgressBar>("FinancialBar");
             ProgressBar IntellectBar = this.FindByName<ProgressBar>("IntellectBar");
             await MainLevel.ProgressTo(MainLevel.Progress+.2, 250, Easing.Linear);
-            if(tasktype1 == "Fitness" || tasktype2 == "Fitness")
+            if(tasktype == "Fitness")
             {
-                await FitnessBar.ProgressTo(FitnessBar.Progress+ .1, 100, Easing.Linear);
+                if(FitnessBar.Progress>=0.85)
+                {
+                    double progresscalc = 1.0 - FitnessBar.Progress;
+                    await FitnessBar.ProgressTo(FitnessBar.Progress + progresscalc, 100, Easing.Linear);
+                    progresscalc = progresscalc / 3;
+                    await IntellectBar.ProgressTo(IntellectBar.Progress - progresscalc, 100, Easing.Linear);
+                    await SocialBar.ProgressTo(SocialBar.Progress - progresscalc, 100, Easing.Linear);
+                    await FinancialBar.ProgressTo(FinancialBar.Progress - progresscalc, 100, Easing.Linear);
+
+                }
+                else
+                {
+                    await FitnessBar.ProgressTo(FitnessBar.Progress + .15, 100, Easing.Linear);
+                }
+                
             }
             else
             {
-                await FitnessBar.ProgressTo(FitnessBar.Progress - .1, 100, Easing.Linear);
+                await FitnessBar.ProgressTo(FitnessBar.Progress - .05, 100, Easing.Linear);
             }
-            if (tasktype1 == "Intellect" || tasktype2 == "Intellect")
+            if (tasktype == "Intellect")
             {
-                await IntellectBar.ProgressTo(IntellectBar.Progress + .1, 100, Easing.Linear);
-            }
-            else
-            {
-                await IntellectBar.ProgressTo(IntellectBar.Progress - .1, 100, Easing.Linear);
-            }
-            if (tasktype1 == "Social" || tasktype2 == "Social")
-            {
-                await SocialBar.ProgressTo(SocialBar.Progress + .1, 100, Easing.Linear);
-            }
-            else
-            {
-                await SocialBar.ProgressTo(SocialBar.Progress - .1, 100, Easing.Linear);
-            }
-            if (tasktype1 == "Financial" || tasktype2 == "Financial")
-            {
-                await FinancialBar.ProgressTo(FinancialBar.Progress + .1, 100, Easing.Linear);
+                if (IntellectBar.Progress >= 0.85)
+                {
+                    double progresscalc = 1.0 - IntellectBar.Progress;
+                    await IntellectBar.ProgressTo(IntellectBar.Progress + progresscalc, 100, Easing.Linear);
+                    progresscalc = progresscalc / 3;
+                    await FitnessBar.ProgressTo(FitnessBar.Progress - progresscalc, 100, Easing.Linear);
+                    await SocialBar.ProgressTo(SocialBar.Progress - progresscalc, 100, Easing.Linear);
+                    await FinancialBar.ProgressTo(FinancialBar.Progress - progresscalc, 100, Easing.Linear);
+
+                }
+                else
+                {
+                    await IntellectBar.ProgressTo(IntellectBar.Progress + .15, 100, Easing.Linear);
+                }
+               
             }
             else
             {
-                await FinancialBar.ProgressTo(FinancialBar.Progress - .1, 100, Easing.Linear);
+                await IntellectBar.ProgressTo(IntellectBar.Progress - .05, 100, Easing.Linear);
+            }
+            if (tasktype == "Social")
+            {
+                if (SocialBar.Progress >= 0.85)
+                {
+                    double progresscalc = 1.0 - SocialBar.Progress;
+                    await SocialBar.ProgressTo(SocialBar.Progress + progresscalc, 100, Easing.Linear);
+                    progresscalc = progresscalc / 3;
+                    await IntellectBar.ProgressTo(IntellectBar.Progress - progresscalc, 100, Easing.Linear);
+                    await FitnessBar.ProgressTo(FitnessBar.Progress - progresscalc, 100, Easing.Linear);
+                    await FinancialBar.ProgressTo(FinancialBar.Progress - progresscalc, 100, Easing.Linear);
+
+                }
+                else
+                {
+                    await SocialBar.ProgressTo(SocialBar.Progress + .15, 100, Easing.Linear);
+                }
+                
+            }
+            else
+            {
+                await SocialBar.ProgressTo(SocialBar.Progress - .05, 100, Easing.Linear);
+            }
+            if (tasktype == "Financial")
+            {
+                if (FinancialBar.Progress >= 0.85)
+                {
+                    double progresscalc = 1.0 - FitnessBar.Progress;
+                    await FinancialBar.ProgressTo(FinancialBar.Progress + progresscalc, 100, Easing.Linear);
+                    progresscalc = progresscalc / 3;
+                    await IntellectBar.ProgressTo(IntellectBar.Progress - progresscalc, 100, Easing.Linear);
+                    await SocialBar.ProgressTo(SocialBar.Progress - progresscalc, 100, Easing.Linear);
+                    await FitnessBar.ProgressTo(FitnessBar.Progress - progresscalc, 100, Easing.Linear);
+
+                }
+                else
+                {
+                    await FinancialBar.ProgressTo(FinancialBar.Progress + .15, 100, Easing.Linear);
+                }
+                
+            }
+            else
+            {
+                await FinancialBar.ProgressTo(FinancialBar.Progress - .05, 100, Easing.Linear);
             }
             if (MainLevel.Progress == 1)
             {
