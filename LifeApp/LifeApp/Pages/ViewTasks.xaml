@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            x:Class="LifeApp.Pages.ViewTasks"
+            Title="View Tasks">
+    <ContentPage Title="All Tasks">
+        <ContentPage.Content>
+            <ListView x:Name="allTaskList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding taskName}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+<!--NEW TAB-->
+    <ContentPage Title="Fitness">
+        <ContentPage.Content>
+            <ListView x:Name="fitnessTaskList"/>
+        </ContentPage.Content>
+    </ContentPage>
+<!--NEW TAB-->
+    <ContentPage Title="Intellect">
+        <ContentPage.Content>
+            <ListView x:Name="intellectTaskList"/>
+        </ContentPage.Content>
+    </ContentPage>
+<!--NEW TAB-->    
+    <ContentPage Title="Social">
+        <ContentPage.Content>
+            <ListView x:Name="socialTaskList"/>
+        </ContentPage.Content>
+    </ContentPage>
+<!--NEW TAB-->    
+    <ContentPage Title="Financial">
+        <ContentPage.Content>
+            <ListView x:Name="financialTaskList"/>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

@@ -11,7 +11,8 @@
             <Entry x:Name="editTaskEntry"
                    Text=""/>
             <DatePicker x:Name="taskDueDate"/>
-            <Picker x:Name="taskType" Title="Type of Task:">
+            <Picker x:Name="taskType" 
+                    Title="Type of Task:">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Fitness</x:String>
@@ -21,6 +22,8 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
+            <Button Text="Save Task"
+                    Clicked="saveTask"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

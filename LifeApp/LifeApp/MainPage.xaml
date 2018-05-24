@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:LifeApp"
-             x:Class="LifeApp.MainPage">
+             x:Class="LifeApp.MainPage"
+             Title="Life!">
     <StackLayout Margin="20, 10">
         <StackLayout Orientation="Vertical" VerticalOptions="Start">
             <Label Text="LifeApp!" 
@@ -12,7 +13,8 @@
                    Placeholder="Add task..." 
                    Completed="taskAdded"/>
             <Button x:Name="viewTasks"
-                    Text="View All Tasks"/>
+                    Text="View All Tasks"
+                    Clicked="viewAllTasks"/>
         </StackLayout>
         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
             <Button Text="Task complete!"
