@@ -157,6 +157,42 @@
   <ItemGroup>
     <BundleResource Include="Resources\backpack-480.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\orange-T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\red-T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\blue-T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\green-T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\green-Pants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\red-Pants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\orange-Pants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\blue-Pants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\blue-Shoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\orange-Shoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\green-Shoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\red-Shoes.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\LifeApp\LifeApp.projitems" Label="Shared" />
 </Project>

@@ -10,12 +10,13 @@
             <StackLayout Padding="0" HorizontalOptions="Fill" VerticalOptions="StartAndExpand" Spacing="0" >
                 <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black" HeightRequest="600" >  <!--Creates grid with some specifications-->
 
+                    <!--Creation of Grid inside content page container-->
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -25,7 +26,11 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                     
+                    
+                    <!--Add Image of Item-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="orange-Shoes.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
+
                     <Button StyleId="1" 
                             Text="Buy"  
                             Grid.Row="2" 
@@ -48,8 +53,12 @@
                            Grid.ColumnSpan="3" 
                            Grid.RowSpan="1" 
                            VerticalOptions="End" 
-                           BackgroundColor="Aqua"/>
-                    
+                           BackgroundColor="Aqua"
+                           x:Name="Label1"/>
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="red-Shoes.png" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
+
                     <Button StyleId="2"  
                             Text="Buy" 
                             Grid.Row="2" 
@@ -73,6 +82,11 @@
                            VerticalOptions="End" 
                            BackgroundColor="Aqua"/>
 
+                    <!--Add Image of Item-->
+                        <Image WidthRequest="200" HeightRequest="200" Source="blue-Shoes.png" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
+                    
+
                     <Button StyleId="3"  
                             Text="Buy" 
                             Grid.Row="5" 
@@ -95,6 +109,10 @@
                            Grid.RowSpan="1" 
                            VerticalOptions="End" 
                            BackgroundColor="Aqua"/>
+
+                    <!--Add Image of Item-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="green-Shoes.png" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
                     
                     <Button StyleId="4" 
                             Text="Buy" 
@@ -145,6 +163,10 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="orange-T.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
+
                     <Button StyleId="1" 
                             Text="Buy"  
                             Grid.Row="2" 
@@ -167,6 +189,10 @@
                            Grid.RowSpan="1" 
                            VerticalOptions="End" 
                            BackgroundColor="Aqua"/>
+
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="red-T.png" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
 
                     <Button StyleId="2"  
                             Text="Buy" 
@@ -191,6 +217,10 @@
                            VerticalOptions="End" 
                            BackgroundColor="Aqua"/>
 
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="blue-T.png" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
+
                     <Button StyleId="3"  
                             Text="Buy" 
                             Grid.Row="5" 
@@ -213,6 +243,10 @@
                            Grid.RowSpan="1" 
                            VerticalOptions="End" 
                            BackgroundColor="Aqua"/>
+
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="green-T.png" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
 
                     <Button StyleId="4" 
                             Text="Buy" 
@@ -263,6 +297,10 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="orange-Pants.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
+
                     <Button StyleId="1" 
                             Text="Buy"  
                             Grid.Row="2" 
@@ -285,6 +323,10 @@
                            Grid.RowSpan="1" 
                            VerticalOptions="End" 
                            BackgroundColor="Aqua"/>
+
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="red-Pants.png" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
 
                     <Button StyleId="2"  
                             Text="Buy" 
@@ -309,6 +351,10 @@
                            VerticalOptions="End" 
                            BackgroundColor="Aqua"/>
 
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="blue-Pants.png" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
+
                     <Button StyleId="3"  
                             Text="Buy" 
                             Grid.Row="5" 
@@ -331,7 +377,11 @@
                            Grid.RowSpan="1" 
                            VerticalOptions="End" 
                            BackgroundColor="Aqua"/>
-
+                    
+                    <!--This has been added-->
+                    <Image WidthRequest="200" HeightRequest="200" Source="green-Pants.png" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
+                    </Image>
+                    
                     <Button StyleId="4" 
                             Text="Buy" 
                             Grid.Row="5" 
@@ -362,11 +412,8 @@
 
     <ContentPage Title="Inventory" Icon="backpack-48.png" BackgroundColor="Black">
         <ContentPage.Content>
-            <StackLayout>
-
-
-            </StackLayout>
-
+            <ListView>
+            </ListView>
         </ContentPage.Content>
     </ContentPage>
 
