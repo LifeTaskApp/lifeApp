@@ -28,29 +28,37 @@ namespace LifeApp
             ProgressBar FinancialBar = this.FindByName<ProgressBar>("FinancialBar");
             ProgressBar IntellectBar = this.FindByName<ProgressBar>("IntellectBar");
             await MainLevel.ProgressTo(MainLevel.Progress+.2, 250, Easing.Linear);
+            double progression_main = 0.15;
+            double progression_sub = 0.05;
+            double progression_calc = 0.0;
             if(tasktype == "Fitness")
             {
-                if(FitnessBar.Progress>=0.85)
+                if (FitnessBar.Progress >= 0.85)
                 {
-                    double progresscalc = 1.0 - FitnessBar.Progress;
-                    await FitnessBar.ProgressTo(FitnessBar.Progress + progresscalc, 100, Easing.Linear);
-                    progresscalc = progresscalc / 3;
-                    await IntellectBar.ProgressTo(IntellectBar.Progress - progresscalc, 100, Easing.Linear);
-                    await SocialBar.ProgressTo(SocialBar.Progress - progresscalc, 100, Easing.Linear);
-                    await FinancialBar.ProgressTo(FinancialBar.Progress - progresscalc, 100, Easing.Linear);
-
+                    progression_main = 1.0 - FitnessBar.Progress;
+                    progression_sub = progression_main / 3;
                 }
-                else
+                if(IntellectBar.Progress <=progression_sub)
                 {
-                    await FitnessBar.ProgressTo(FitnessBar.Progress + .15, 100, Easing.Linear);
+                    progression_calc = progression_sub - IntellectBar.Progress;
+                    progression_sub = progression_sub + (progression_calc / 2);
                 }
-                
+                if (SocialBar.Progress <= progression_sub)
+                {
+                    progression_calc = progression_sub - SocialBar.Progress;
+                    progression_sub = progression_sub + (progression_calc / 2);
+                }
+                if (FinancialBar.Progress <= progression_sub)
+                {
+                    progression_calc = progression_sub - FinancialBar.Progress;
+                    progression_sub = progression_sub + (progression_calc / 2);
+                }
+                await IntellectBar.ProgressTo(IntellectBar.Progress - progression_sub, 100, Easing.Linear);
+                await SocialBar.ProgressTo(SocialBar.Progress - progression_sub, 100, Easing.Linear);
+                await FinancialBar.ProgressTo(FinancialBar.Progress - progression_sub, 100, Easing.Linear);
+                await FitnessBar.ProgressTo(FitnessBar.Progress + progression_main, 100, Easing.Linear);   
             }
-            else
-            {
-                await FitnessBar.ProgressTo(FitnessBar.Progress - .05, 100, Easing.Linear);
-            }
-            if (tasktype == "Intellect")
+            else if (tasktype == "Intellect")
             {
                 if (IntellectBar.Progress >= 0.85)
                 {
@@ -66,13 +74,18 @@ namespace LifeApp
                 {
                     await IntellectBar.ProgressTo(IntellectBar.Progress + .15, 100, Easing.Linear);
                 }
-               
+                
+                    if (IntellectBar.Progress <= 0.05)
+                    {
+
+                    }
+                    else
+                    {
+                        await IntellectBar.ProgressTo(IntellectBar.Progress - .05, 100, Easing.Linear);
+                    }
+
             }
-            else
-            {
-                await IntellectBar.ProgressTo(IntellectBar.Progress - .05, 100, Easing.Linear);
-            }
-            if (tasktype == "Social")
+            else if (tasktype == "Social")
             {
                 if (SocialBar.Progress >= 0.85)
                 {
@@ -92,10 +105,6 @@ namespace LifeApp
             }
             else
             {
-                await SocialBar.ProgressTo(SocialBar.Progress - .05, 100, Easing.Linear);
-            }
-            if (tasktype == "Financial")
-            {
                 if (FinancialBar.Progress >= 0.85)
                 {
                     double progresscalc = 1.0 - FitnessBar.Progress;
@@ -111,10 +120,6 @@ namespace LifeApp
                     await FinancialBar.ProgressTo(FinancialBar.Progress + .15, 100, Easing.Linear);
                 }
                 
-            }
-            else
-            {
-                await FinancialBar.ProgressTo(FinancialBar.Progress - .05, 100, Easing.Linear);
             }
             if (MainLevel.Progress == 1)
             {
