@@ -13,6 +13,7 @@ namespace LifeApp
         public MainPage()
         {
             InitializeComponent();
+            
         }
 
         void Handle_Clicked(object sender, EventArgs e)

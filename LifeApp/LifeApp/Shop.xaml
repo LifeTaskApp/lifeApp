@@ -411,10 +411,23 @@
     </ContentPage>
 
     <ContentPage Title="Inventory" Icon="backpack-48.png" BackgroundColor="Black">
-        <ContentPage.Content>
-            <ListView>
-            </ListView>
-        </ContentPage.Content>
+        <ListView x:Name="MainListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Cost}" TextColor="Black" DetailColor="Black">
+                        
+                    </TextCell>
+
+                    <!--  <ImageCell 
+                       ImageSource="{Binding ItemImage}"
+                        Text = "{Binding Title}"
+                        Detail="{Binding Description}">
+                        
+                    </ImageCell>
+                    -->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage>
 
 </TabbedPage>
