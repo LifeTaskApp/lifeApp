@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            x:Class="LifeApp.Pages.ViewTasks"
+            Title="View Tasks">
+    <ContentPage Title="All Tasks">
+        <ContentPage.Content>
+            <ListView x:Name="allTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+<!--NEW TAB-->
+    <ContentPage Title="Physical">
+        <ContentPage.Content>
+            <ListView x:Name="physicalTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+<!--NEW TAB-->
+    <ContentPage Title="Mental">
+        <ContentPage.Content>
+            <ListView x:Name="mentalTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+<!--NEW TAB-->    
+    <ContentPage Title="Social">
+        <ContentPage.Content>
+            <ListView x:Name="socialTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+<!--NEW TAB-->    
+    <ContentPage Title="Financial">
+        <ContentPage.Content>
+            <ListView x:Name="financialTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>
