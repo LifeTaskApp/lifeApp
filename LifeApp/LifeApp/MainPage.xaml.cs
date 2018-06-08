@@ -13,6 +13,7 @@ namespace LifeApp
         {
             Entry entry = sender as Entry;
             var text = entry.Text;
+
             Navigation.PushAsync(new Pages.AddTask(text));
         }
 
@@ -21,30 +22,37 @@ namespace LifeApp
             Navigation.PushAsync(new Pages.ViewTasks());
         }
 
-        async void OnButtonClicked(object sender, EventArgs args)
-        {
-            Label username = this.FindByName<Label>("username");
+        async void levelUp(object sender, EventArgs args)
+        {   //our levelling up test system
+            Label name = this.FindByName<Label>("username");
             Label levelLabel = this.FindByName<Label>("userLevel");
-            ProgressBar userLevelBar = this.FindByName<ProgressBar>("userLevelBar");
+            ProgressBar levelBar = this.FindByName<ProgressBar>("userLevelBar");
 
-            await userLevelBar.ProgressTo(userLevelBar.Progress + .2, 250, Easing.Linear);
+            //increases our progress bar as task is completed
+            await levelBar.ProgressTo(levelBar.Progress + .2, 250, Easing.Linear);
 
-            if (userLevelBar.Progress == 1)
+            //checks for full progress bar for a level up
+            if (levelBar.Progress == 1)
             {
-                username.Text = "Level Up!";
+                name.Text = "Level Up!";
+
                 int convertLevelInt = Convert.ToInt32(levelLabel.Text);
                 convertLevelInt++;
+
                 String convertLevelString = Convert.ToString(convertLevelInt);
                 levelLabel.Text = convertLevelString;
-                await userLevelBar.ProgressTo(0, 250, Easing.Linear);
+
+                await levelBar.ProgressTo(0, 250, Easing.Linear);
             }
         }
 
         public MainPage()
-        {
+        {   
             InitializeComponent();
-            Label username = this.FindByName<Label>("username");
-            username.Text = "Calvin";
+
+            //initisalised a test user as we have not set up login
+            Label name = this.FindByName<Label>("username");
+            name.Text = "Bob";
         }
 
     }

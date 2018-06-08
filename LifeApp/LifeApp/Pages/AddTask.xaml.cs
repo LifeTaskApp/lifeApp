@@ -3,41 +3,31 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
-namespace LifeApp.Pages
-{
-    public partial class AddTask : ContentPage
-    {
+namespace LifeApp.Pages {
+    public partial class AddTask : ContentPage {
         private string task;
+        private DateTime date;
 
-        private void saveTask(object sender, EventArgs e)
-        {
-            Entry addTaskEntry = this.FindByName<Entry>("editTaskEntry");
-            task = addTaskEntry.Text;
+        private ViewTasks viewList = new ViewTasks();
+        private ObservableCollection<Task> setTaskList = new ObservableCollection<Task>();
 
-            //ListView allTaskList = this.FindByName<ListView>("allTaskList");
-            //allTaskList.ItemsSource = new List<Task>()
-            //{
-            //    new Task()
-            //    {
-            //        taskName = task
-            //    }
-            //};
+        private async void SaveTask(object sender, EventArgs e) {
+            Entry editEntry = this.FindByName<Entry>("editTaskEntry");
+            DatePicker taskDate = this.FindByName<DatePicker>("taskDueDate");
+            Picker type = this.FindByName<Picker>("taskType");
+            string typeName = type.Items[type.SelectedIndex];
 
-            //List<Task> taskList = new List<Task>();
-
-            //Label listTaskName = this.FindByName<Label>("listTaskName");
-            //listTaskName.Text = task;
-
-            //List<Task> tasks = new List<Task>();
-            //tasks.Add(new Task { taskName = task });
-
-            //allTaskList.ItemsSource = tasks;
+            viewList.SetTasks(editEntry.Text, taskDate.Date, typeName);
+            await DisplayAlert("Success!", "Your task has been saved!", "Okay");
+            await Navigation.PopAsync();
         }
 
-        public AddTask(string text)
-        {
+        public AddTask() {
             InitializeComponent();
+        }
 
+        public AddTask(string text) {
+            InitializeComponent();
             Entry addTaskEntry = this.FindByName<Entry>("editTaskEntry");
             addTaskEntry.Text = text;
         }

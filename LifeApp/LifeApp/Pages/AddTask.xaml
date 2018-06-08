@@ -2,12 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:LifeApp.Pages"
-             x:Class="LifeApp.Pages.AddTask">
+             x:Class="LifeApp.Pages.AddTask"
+             Title="Add a Task!">
     <ContentPage.Content>
         <StackLayout Margin="20, 10">
-            <Label x:Name="titleLabel"
-                   Text="This is the AddTask page!"
-                   Style="{DynamicResource TitleStyle}"/> 
             <Entry x:Name="editTaskEntry"
                    Text=""/>
             <DatePicker x:Name="taskDueDate"/>
@@ -15,15 +13,15 @@
                     Title="Type of Task:">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>Fitness</x:String>
-                        <x:String>Intellect</x:String>
+                        <x:String>Physical</x:String>
+                        <x:String>Mental</x:String>
                         <x:String>Social</x:String>
-                        <x:String>Finance</x:String>
+                        <x:String>Finacial</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
             <Button Text="Save Task"
-                    Clicked="saveTask"/>
+                    Clicked="SaveTask"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

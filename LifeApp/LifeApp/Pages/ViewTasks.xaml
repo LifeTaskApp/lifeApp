@@ -5,13 +5,16 @@
             Title="View Tasks">
     <ContentPage Title="All Tasks">
         <ContentPage.Content>
-            <ListView x:Name="allTaskList">
+            <ListView x:Name="allTaskList" ItemsSource="{Binding .}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding taskName}"/>
-                            </StackLayout>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -19,27 +22,79 @@
         </ContentPage.Content>
     </ContentPage>
 <!--NEW TAB-->
-    <ContentPage Title="Fitness">
+    <ContentPage Title="Physical">
         <ContentPage.Content>
-            <ListView x:Name="fitnessTaskList"/>
+            <ListView x:Name="physicalTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </ContentPage.Content>
     </ContentPage>
 <!--NEW TAB-->
-    <ContentPage Title="Intellect">
+    <ContentPage Title="Mental">
         <ContentPage.Content>
-            <ListView x:Name="intellectTaskList"/>
+            <ListView x:Name="mentalTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </ContentPage.Content>
     </ContentPage>
 <!--NEW TAB-->    
     <ContentPage Title="Social">
         <ContentPage.Content>
-            <ListView x:Name="socialTaskList"/>
+            <ListView x:Name="socialTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </ContentPage.Content>
     </ContentPage>
 <!--NEW TAB-->    
     <ContentPage Title="Financial">
         <ContentPage.Content>
-            <ListView x:Name="financialTaskList"/>
+            <ListView x:Name="financialTaskList" ItemsSource="{Binding .}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding taskName}"/>
+                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </ContentPage.Content>
     </ContentPage>
 </TabbedPage>

@@ -20,7 +20,7 @@
             <Button Text="Task complete!"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    Clicked="OnButtonClicked"
+                    Clicked="levelUp"
                     Command="{Binding Click}"/>
             <ProgressBar x:Name="userLevelBar" 
                          Progress="0.0" 
@@ -47,7 +47,7 @@
                        Text="1"/>
                 <Label FontSize="12"
                        HorizontalOptions="Center"
-                       Text="Fitness"
+                       Text="Physical"
                        Grid.Row="1"
                        Grid.Column="0"/>
                 <ProgressBar x:Name="fitness" 
@@ -57,7 +57,7 @@
                              Grid.Column="0"/>
                 <Label FontSize="12"
                        HorizontalOptions="Center"
-                       Text="Intellect"
+                       Text="Mental"
                        Grid.Row="1"
                        Grid.Column="1"/>
                 <ProgressBar x:Name="intellect" 
