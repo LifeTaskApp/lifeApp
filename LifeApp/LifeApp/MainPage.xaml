@@ -41,7 +41,7 @@
             Text = "Fitness"
             Grid.Row="1"
             Grid.Column="0"/>
-            <ProgressBar x:Name="FitnessBar" 
+            <ProgressBar x:Name="PhysicalBar" 
                 Progress="0.1" 
                 Scale="1.0"
                 Grid.Row="2"
@@ -52,7 +52,7 @@
             Text = "Intellect"
             Grid.Row="1"
             Grid.Column="1"/>
-            <ProgressBar x:Name="IntellectBar" 
+            <ProgressBar x:Name="MentalBar" 
                 Progress="0.7" 
                 Scale="1.0"
                 Grid.Row="2"
