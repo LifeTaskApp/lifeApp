@@ -167,7 +167,7 @@
                     <Image WidthRequest="200" HeightRequest="200" Source="orange-T.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
                     </Image>
 
-                    <Button StyleId="1" 
+                    <Button StyleId="5" 
                             Text="Buy"  
                             Grid.Row="2" 
                             Grid.Column="0" 
@@ -194,7 +194,7 @@
                     <Image WidthRequest="200" HeightRequest="200" Source="red-T.png" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
                     </Image>
 
-                    <Button StyleId="2"  
+                    <Button StyleId="6"  
                             Text="Buy" 
                             Grid.Row="2" 
                             Grid.Column="4" 
@@ -221,7 +221,7 @@
                     <Image WidthRequest="200" HeightRequest="200" Source="blue-T.png" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
                     </Image>
 
-                    <Button StyleId="3"  
+                    <Button StyleId="7"  
                             Text="Buy" 
                             Grid.Row="5" 
                             Grid.Column="0" 
@@ -248,7 +248,7 @@
                     <Image WidthRequest="200" HeightRequest="200" Source="green-T.png" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
                     </Image>
 
-                    <Button StyleId="4" 
+                    <Button StyleId="8" 
                             Text="Buy" 
                             Grid.Row="5" 
                             Grid.Column="4" 
@@ -301,7 +301,7 @@
                     <Image WidthRequest="200" HeightRequest="200" Source="orange-Pants.png" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
                     </Image>
 
-                    <Button StyleId="1" 
+                    <Button StyleId="9" 
                             Text="Buy"  
                             Grid.Row="2" 
                             Grid.Column="0" 
@@ -328,7 +328,7 @@
                     <Image WidthRequest="200" HeightRequest="200" Source="red-Pants.png" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
                     </Image>
 
-                    <Button StyleId="2"  
+                    <Button StyleId="10"  
                             Text="Buy" 
                             Grid.Row="2" 
                             Grid.Column="4" 
@@ -355,7 +355,7 @@
                     <Image WidthRequest="200" HeightRequest="200" Source="blue-Pants.png" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
                     </Image>
 
-                    <Button StyleId="3"  
+                    <Button StyleId="11"  
                             Text="Buy" 
                             Grid.Row="5" 
                             Grid.Column="0" 
@@ -382,7 +382,7 @@
                     <Image WidthRequest="200" HeightRequest="200" Source="green-Pants.png" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="2" VerticalOptions="Start" HorizontalOptions="Center">
                     </Image>
                     
-                    <Button StyleId="4" 
+                    <Button StyleId="12" 
                             Text="Buy" 
                             Grid.Row="5" 
                             Grid.Column="4" 
@@ -411,20 +411,19 @@
     </ContentPage>
 
     <ContentPage Title="Inventory" Icon="backpack-48.png" BackgroundColor="Black">
-        <ListView x:Name="MainListView">
+        <ListView x:Name="MainListView"
+                  ItemsSource="{Binding .}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}" Detail="{Binding Cost}" TextColor="Black" DetailColor="Black">
-                        
-                    </TextCell>
-
-                    <!--  <ImageCell 
-                       ImageSource="{Binding ItemImage}"
-                        Text = "{Binding Title}"
-                        Detail="{Binding Description}">
-                        
-                    </ImageCell>
-                    -->
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout >
+                                <Label Text= "{Binding Name}" FontSize="Small"/>
+                                <Label Text="{Binding Cost}" FontSize="Micro"/>
+                                <Label Text="{Binding Equipped}" FontSize="Micro"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
