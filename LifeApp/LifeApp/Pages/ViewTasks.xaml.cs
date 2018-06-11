@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using Android.Content;
+using Android.Support.Design.Widget;
 using Xamarin.Forms;
 
 namespace LifeApp.Pages {
@@ -24,6 +26,22 @@ namespace LifeApp.Pages {
                 socialList.AddTask(taskName, dueDate);
             } else if (type.Equals("Financial")) {
                 financialList.AddTask(taskName, dueDate);
+            }
+        }
+
+        public async void OnCompleteAsync(object sender, EventArgs e) {
+            var item = ((MenuItem)sender);
+            Task selectedTask = (Task)item.CommandParameter;
+
+            bool doComplete = await DisplayAlert("Are You Sure?", "Are you sure you want to delete this task?", "Yes", "No");
+
+            if (doComplete) {
+                taskList.RemoveTask(selectedTask);
+                foreach (Task checkTask in physicalList.getList()) {
+                    if (checkTask == selectedTask) {
+                        physicalList.RemoveTask(selectedTask);
+                    }
+                }
             }
         }
 

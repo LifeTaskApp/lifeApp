@@ -5,11 +5,7 @@ using Xamarin.Forms;
 
 namespace LifeApp.Pages {
     public partial class AddTask : ContentPage {
-        private string task;
-        private DateTime date;
-
         private ViewTasks viewList = new ViewTasks();
-        private ObservableCollection<Task> setTaskList = new ObservableCollection<Task>();
 
         private async void SaveTask(object sender, EventArgs e) {
             Entry editEntry = this.FindByName<Entry>("editTaskEntry");

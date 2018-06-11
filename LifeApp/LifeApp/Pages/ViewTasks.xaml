@@ -5,96 +5,123 @@
             Title="View Tasks">
     <ContentPage Title="All Tasks">
         <ContentPage.Content>
-            <ListView x:Name="allTaskList" ItemsSource="{Binding .}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Label Text="{Binding taskName}"/>
-                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout Margin="20, 10">
+                <ListView x:Name="allTaskList" 
+                          ItemsSource="{Binding .}"
+                          IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Clicked="OnCompleteAsync" 
+                                              CommandParameter="{Binding .}"
+                                              Text="Complete" 
+                                              IsDestructive="True" />
+                                </ViewCell.ContextActions>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Label Text="{Binding taskName}"/>
+                                        <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 <!--NEW TAB-->
     <ContentPage Title="Physical">
         <ContentPage.Content>
-            <ListView x:Name="physicalTaskList" ItemsSource="{Binding .}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Label Text="{Binding taskName}"/>
-                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout Margin="20, 10">
+                <ListView x:Name="physicalTaskList" 
+                          ItemsSource="{Binding .}"
+                          IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Label Text="{Binding taskName}"/>
+                                        <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
         </ContentPage.Content>
     </ContentPage>
 <!--NEW TAB-->
     <ContentPage Title="Mental">
         <ContentPage.Content>
-            <ListView x:Name="mentalTaskList" ItemsSource="{Binding .}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Label Text="{Binding taskName}"/>
-                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout Margin="20, 10">
+                <ListView x:Name="mentalTaskList" 
+                          ItemsSource="{Binding .}"
+                          IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Label Text="{Binding taskName}"/>
+                                        <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 <!--NEW TAB-->    
     <ContentPage Title="Social">
         <ContentPage.Content>
-            <ListView x:Name="socialTaskList" ItemsSource="{Binding .}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Label Text="{Binding taskName}"/>
-                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout Margin="20, 10">
+                <ListView x:Name="socialTaskList" 
+                          ItemsSource="{Binding .}"
+                          IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Label Text="{Binding taskName}"/>
+                                        <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 <!--NEW TAB-->    
     <ContentPage Title="Financial">
         <ContentPage.Content>
-            <ListView x:Name="financialTaskList" ItemsSource="{Binding .}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Label Text="{Binding taskName}"/>
-                                    <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout Margin="20, 10">
+                <ListView x:Name="financialTaskList" 
+                          ItemsSource="{Binding .}"
+                          IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout>
+                                        <Label Text="{Binding taskName}"/>
+                                        <Label Text="{Binding dueDate, StringFormat='{0:d}'}"/>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 </TabbedPage>

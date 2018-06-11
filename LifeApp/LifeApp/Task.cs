@@ -21,6 +21,10 @@ public class TaskList : List<Task> {
         });
     }
 
+    public void RemoveTask(Task item) {
+        taskList.Remove(item);
+    }
+
     public ObservableCollection<Task> getList() {
         return taskList;
     }

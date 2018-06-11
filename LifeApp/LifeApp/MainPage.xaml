@@ -6,20 +6,15 @@
              Title="Life!">
     <StackLayout Margin="20, 10">
         <StackLayout Orientation="Vertical" VerticalOptions="Start">
-            <Label Text="LifeApp!" 
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center"/>
+        <!-- ADD AND VIEW TASKS -->
             <Entry x:Name="addTaskEntry" 
                    Placeholder="Add task..." 
                    Completed="taskAdded"/>
             <Button x:Name="viewTasks"
                     Text="View All Tasks"
                     Clicked="viewAllTasks"/>
-        </StackLayout>
-        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-            <Button Text="Task complete!"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
+        <!-- PROGRESS BARS -->
+            <Button Text="Complete Task"
                     Clicked="levelUp"
                     Command="{Binding Click}"/>
             <ProgressBar x:Name="userLevelBar" 
@@ -50,7 +45,7 @@
                        Text="Physical"
                        Grid.Row="1"
                        Grid.Column="0"/>
-                <ProgressBar x:Name="fitness" 
+                <ProgressBar x:Name="physicalBar" 
                              Progress="0.1" 
                              Scale="1.0"
                              Grid.Row="2"
@@ -60,7 +55,7 @@
                        Text="Mental"
                        Grid.Row="1"
                        Grid.Column="1"/>
-                <ProgressBar x:Name="intellect" 
+                <ProgressBar x:Name="mentalBar" 
                              Progress="0.7" 
                              Scale="1.0"
                              Grid.Row="2"
@@ -70,7 +65,7 @@
                        Text="Social"
                        Grid.Row="3"
                        Grid.Column="0"/>
-                <ProgressBar x:Name="social" 
+                <ProgressBar x:Name="socialBar" 
                              Progress="0.3" 
                              Scale="1.0"
                              Grid.Row="4"
@@ -80,21 +75,26 @@
                        Text="Financial"
                        Grid.Row="3"
                        Grid.Column="1"/>
-                <ProgressBar x:Name="financial" 
+                <ProgressBar x:Name="financialBar" 
                              Progress="0.9" 
                              Scale="1.0"
                              Grid.Row="4"
                              Grid.Column="1"/>
             </Grid>
         </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <!-- AVATAR -->
+            <Image Source="man.png"
+                   VerticalOptions="FillAndExpand"/>
+        </StackLayout>
         <StackLayout Orientation="Horizontal" VerticalOptions="End">
             <Button x:Name="editAvatarButton" 
                     Text="Edit Avatar"
-                    HorizontalOptions="FillAndExpand"/>
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="EditAvatar"/>
             <Button x:Name="shopButton" 
                     Text="Shop"
                     HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-    </StackLayout>
+	</StackLayout>
 </ContentPage>
-    
